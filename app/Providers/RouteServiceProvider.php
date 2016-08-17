@@ -17,6 +17,11 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     /**
+     * @var string
+     */
+    protected $apiNamespace = 'App\Http\Api\Controllers';
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @param  \Illuminate\Routing\Router  $router
@@ -35,9 +40,9 @@ class RouteServiceProvider extends ServiceProvider
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function map(Router $router)
+    public function map(Router $router, \Dingo\Api\Routing\Router $apiRouter)
     {
-        $this->mapWebRoutes($router);
+        $this->mapWebRoutes($router, $apiRouter);
 
         //
     }
@@ -50,12 +55,18 @@ class RouteServiceProvider extends ServiceProvider
      * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    protected function mapWebRoutes(Router $router)
+    protected function mapWebRoutes(Router $router, \Dingo\Api\Routing\Router $apiRouter)
     {
         $router->group([
             'namespace' => $this->namespace, 'middleware' => 'web',
         ], function ($router) {
             require app_path('Http/routes.php');
+        });
+
+        $apiRouter->version('v1', [
+            'namespace' => $this->apiNamespace, 'middleware' => ['web', 'api'],
+        ], function ($api) {
+            require app_path('Http/Api/routes.php');
         });
     }
 }

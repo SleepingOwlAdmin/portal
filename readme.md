@@ -6,10 +6,11 @@ https://github.com/SleepingOwlAdmin/portal
 - [ ] Posts & markdown
 - [ ] Comments & markdown
 - [ ] Likes
+- [ ] Notifications & broadcasts
 - [ ] Users & Roles
-- [ ] Image gallery & Dropzone
 - [ ] Activities Feed
 - [ ] Notifications
-- [ ] User mentions
 - [ ] Semantic UI & VueJS & Webkit
 - [ ] Dingo API
+- [ ] Image gallery & Dropzone
+- [ ] User mentions

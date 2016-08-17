@@ -153,7 +153,10 @@ return [
         /*
          * Package Service Providers...
          */
-
+        SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
 
         /*
          * Application Service Providers...
