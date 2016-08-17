@@ -1,94 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c726d459-c23d-4500-b3fc-fd88fa607a32" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1399749947.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1399751229.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1399751460.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1399752026.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1399752848.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1399753215.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1399754489.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1399755396.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1406965857.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/tmp/1408037050.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webResources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Activity.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Admin/bootstrap.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Admin/navigation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Admin/routes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Comment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Contracts/ActivityableContract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Contracts/CommentableContract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Contracts/LikeableContract.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Events/CommentCreated.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Events/Disliked.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Events/Liked.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Events/NotificationCreated.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Admin/Posts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Admin/Users.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Controllers/CommentsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Controllers/Controller.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Controllers/LikesController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Controllers/NotificationsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Controllers/SettingsController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Controllers/UserController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Transformers/CommentTransformer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Transformers/LikeTransformer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Transformers/NotificationTransformer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/Transformers/UserTransformer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Api/routes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Forms/CommentForm.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Forms/Form.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Like.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Listeners/Comment/NotifyAboutComment.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Notification.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Post.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Providers/AdminSectionsServiceProvider.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Relations/ActivityMorphTo.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/NotificationsRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Services/MarkdownParser.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/Activityable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/Authored.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/Commentable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Traits/Likeable.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/api.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/portal.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/sleeping_owl.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_08_17_084330_create_posts_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_08_17_084837_create_comments_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_08_17_085013_create_likes_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_08_17_085117_create_notifications_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_08_17_085346_create_activities_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_08_17_100332_add_cut_text_field_to_posts.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_08_17_135153_add_soft_delete_to_comments.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/PostsTableSeeder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helpers.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/assets/sass/app.scss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/portal.iml" afterPath="$PROJECT_DIR$/.idea/portal.iml" />
+    <list default="true" id="c726d459-c23d-4500-b3fc-fd88fa607a32" name="Default" comment="part 1">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/factories/ModelFactory.php" afterPath="$PROJECT_DIR$/database/factories/ModelFactory.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
     </list>
     <ignored path="portal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -690,7 +604,7 @@
     <property name="options.lastSelected" value="configurable.group.tools" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files (x86)\nodejs\node.exe" />
@@ -756,12 +670,20 @@
       <option name="presentableId" value="Default" />
       <updated>1471421345012</updated>
       <workItem from="1471421346140" duration="344000" />
-      <workItem from="1471421706173" duration="25315000" />
+      <workItem from="1471421706173" duration="25520000" />
     </task>
+    <task id="LOCAL-00001" summary="part 1">
+      <created>1471447124281</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1471447124281</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25659000" />
+    <option name="totallyTimeSpent" value="25864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1186" extended-state="6" />
@@ -799,6 +721,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="part 1" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
