@@ -5,9 +5,11 @@ namespace App;
 use App\Contracts\ActivityableContract;
 use App\Contracts\CommentableContract;
 use App\Contracts\LikeableContract;
+use App\Contracts\MetaTaggable;
 use App\Services\MarkdownParser;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
+use KodiCMS\Assets\Contracts\MetaDataInterface;
 
 /**
  * App\Post
@@ -44,9 +46,14 @@ use Illuminate\Http\UploadedFile;
  * @method static \Illuminate\Database\Query\Builder|\App\Post whereCutText($value)
  * @mixin \Eloquent
  */
-class Post extends Model implements ActivityableContract, LikeableContract, CommentableContract
+class Post extends Model implements ActivityableContract, LikeableContract, CommentableContract, MetaDataInterface
 {
-    use \KodiComponents\Support\Upload, \App\Traits\Activityable, \App\Traits\Authored, \App\Traits\Likeable, \App\Traits\Commentable, \Illuminate\Database\Eloquent\SoftDeletes;
+    use \KodiComponents\Support\Upload,
+        \App\Traits\Activityable,
+        \App\Traits\Authored,
+        \App\Traits\Likeable,
+        \App\Traits\Commentable,
+        \Illuminate\Database\Eloquent\SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -190,5 +197,45 @@ class Post extends Model implements ActivityableContract, LikeableContract, Comm
     public function onActivityMorphing()
     {
         $this->with = ['comments_count', 'likes_count'];
+    }
+
+    /**
+     * @return User
+     */
+    public function getAuthor()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaKeywords()
+    {
+        // TODO: Implement getMetaKeywords() method.
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaDescription()
+    {
+        return str_limit($this->text_intro, 200);
+    }
+
+    /**
+     * @return string
+     */
+    public function getMetaRobots()
+    {
+        // TODO: Implement getMetaRobots() method.
     }
 }

@@ -16,3 +16,10 @@ Route::auth();
 Route::get('/', 'HomeController@index');
 
 Route::get('post/{id}', 'PostController@show');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

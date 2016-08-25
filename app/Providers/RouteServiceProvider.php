@@ -22,19 +22,6 @@ class RouteServiceProvider extends ServiceProvider
     protected $apiNamespace = 'App\Http\Api\Controllers';
 
     /**
-     * Define your route model bindings, pattern filters, etc.
-     *
-     * @param  \Illuminate\Routing\Router  $router
-     * @return void
-     */
-    public function boot(Router $router)
-    {
-        //
-
-        parent::boot($router);
-    }
-
-    /**
      * Define the routes for the application.
      *
      * @param  \Illuminate\Routing\Router  $router
@@ -60,13 +47,13 @@ class RouteServiceProvider extends ServiceProvider
         $router->group([
             'namespace' => $this->namespace, 'middleware' => 'web',
         ], function ($router) {
-            require app_path('Http/routes.php');
+            require base_path('routes/web.php');
         });
 
         $apiRouter->version('v1', [
             'namespace' => $this->apiNamespace, 'middleware' => ['web', 'api'],
         ], function ($api) {
-            require app_path('Http/Api/routes.php');
+            require base_path('routes/api.php');
         });
     }
 }

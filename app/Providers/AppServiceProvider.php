@@ -15,6 +15,7 @@ use Dingo\Api\Transformer\Factory as TransformerFactory;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Factory as ValidationFactory;
+use KodiCMS\Assets\Contracts\PackageManagerInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,11 +24,15 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(ValidationFactory $factory, TransformerFactory $transformerFactory)
+    public function boot(ValidationFactory $factory, TransformerFactory $transformerFactory, PackageManagerInterface $packageManager)
     {
         $this->registerMorphMap();
         $this->registerTransformers($transformerFactory);
         $this->registerCustomValidationRules($factory);
+
+        $packageManager->add('jquery')
+            ->js(null, asset('js/jquery.js'))
+            ->css(null, asset('css/jquery.css'));
     }
 
     /**

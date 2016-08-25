@@ -41,7 +41,7 @@ var app = new Vue({
                 return
             }
 
-            this.$http.get('notifications/read', {ids: _.pluck(this.notifications, 'id')}).then(response => {
+            this.$http.put('notifications/read', {ids: _.pluck(this.notifications, 'id')}).then(response => {
                 _.each(this.notifications, notification => {
                     notification.read = true
                 })

@@ -8,8 +8,6 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class CommentCreated extends Event implements ShouldBroadcast
 {
-    use SerializesModels;
-
     /**
      * @var Comment
      */

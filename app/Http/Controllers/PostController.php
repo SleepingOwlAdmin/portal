@@ -11,6 +11,8 @@ class PostController extends Controller
     {
         $post = Post::findOrFail($id);
 
+        $this->meta->setMetaData($post);
+        
         return view('post.show', compact('post'));
     }
 }

@@ -3,27 +3,11 @@
 namespace App\Http\Api\Controllers;
 
 use App\Http\Api\Transformers\NotificationTransformer;
-use App\Repositories\NotificationsRepository;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class NotificationsController extends Controller
 {
-
-    /**
-     * @var NotificationsRepository
-     */
-    private $repository;
-
-    /**
-     * NotificationsController constructor.
-     *
-     * @param NotificationsRepository $repository
-     */
-    public function __construct(NotificationsRepository $repository)
-    {
-        $this->repository = $repository;
-    }
-
     /**
      * @param Request $request
      *
@@ -32,7 +16,7 @@ class NotificationsController extends Controller
     public function recent(Request $request)
     {
         return $this->response()->collection(
-            $this->repository->recent($request->user()),
+            $request->user()->unreadNotifications()->get(),
             new NotificationTransformer()
         );
     }
@@ -48,7 +32,10 @@ class NotificationsController extends Controller
             'ids' => 'array'
         ]);
 
-        $this->repository->markAsRead($request->user(), $request->input('ids', []));
+        $request->user()
+            ->unreadNotifications()
+            ->whereIn('id', $request->input('ids', []))
+            ->update(['read_at', Carbon::now()]);
 
         return true;
     }

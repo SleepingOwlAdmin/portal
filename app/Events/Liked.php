@@ -5,13 +5,10 @@ namespace App\Events;
 use App\Contracts\LikeableContract;
 use App\Like;
 use App\User;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class Liked extends Event implements ShouldBroadcast
 {
-    use SerializesModels;
-
     /**
      * @var LikeableContract
      */

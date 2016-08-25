@@ -4,9 +4,19 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/Kaukov/api"
+      },
+      {
+        "type": "vcs",
+        "url": "https://github.com/Jaspaul/blueprint"
+      }
+    ],
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",
+        "laravel/framework": "5.3.*",
         "laravelrus/sleepingowl": "dev-development",
         "erusev/parsedown-extra": "^0.7.1",
         "dingo/api": "dev-master",

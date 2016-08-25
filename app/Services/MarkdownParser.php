@@ -60,7 +60,7 @@ class MarkdownParser extends \ParsedownExtra
         );
 
         return [
-            'comment' => strip_tags($comment, '<blockquote><b><i><strong>'),
+            'comment' => $comment,
             'mentioned_users' => $parser->getMentionedUsers(),
         ];
     }
@@ -91,7 +91,7 @@ class MarkdownParser extends \ParsedownExtra
      */
     protected function inlineUserMention($Excerpt)
     {
-        if (preg_match('/@(?<username>[\w]+)/is', $Excerpt['text'], $matches)) {
+        if (preg_match('/@(?<username>[\w\.]+)/is', $Excerpt['text'], $matches)) {
             $username = $matches['username'];
 
             if (! empty($username)) {

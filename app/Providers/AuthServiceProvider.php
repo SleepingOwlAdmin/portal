@@ -23,10 +23,8 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(GateContract $gate)
+    public function boot()
     {
-        $this->registerPolicies($gate);
-
         view()->composer(\AdminTemplate::getViewPath('_partials.header'), function ($view) {
             $view->getFactory()->inject('navbar.right', view('auth.partials.navbar', [
                 'user' => auth()->user(),

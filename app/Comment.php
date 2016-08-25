@@ -93,6 +93,7 @@ class Comment extends Model implements LikeableContract
 
         $this->comment = $comment;
         // TODO set mentioned users
+        // $this->mentioned_users = $comment;
     }
 
     /**
@@ -101,5 +102,13 @@ class Comment extends Model implements LikeableContract
     public function commentable()
     {
         return $this->morphTo();
+    }
+
+    /**
+     * @return User
+     */
+    public function getAuthor()
+    {
+        return $this->user;
     }
 }

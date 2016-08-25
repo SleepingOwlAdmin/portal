@@ -33,7 +33,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable implements ActivityableContract
 {
     use \KodiComponents\Support\Upload,
-        \App\Traits\Activityable;
+        \App\Traits\Activityable,
+        \Illuminate\Notifications\Notifiable;
 
     /**
      * The attributes that are mass assignable.

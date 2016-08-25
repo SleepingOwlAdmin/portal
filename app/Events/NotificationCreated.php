@@ -10,8 +10,6 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 class NotificationCreated extends Event implements ShouldBroadcast
 {
-    use SerializesModels;
-
     /**
      * @var Notification
      */

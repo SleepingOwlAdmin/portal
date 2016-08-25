@@ -87,7 +87,6 @@
         },
         created () {
             this.getComments()
-            //this.initFileUpload()
         },
         ready () {
             var self = this;
@@ -97,6 +96,7 @@
                     self.addComment(data.id);
                 }
             })
+            this.initFileUpload()
         },
         methods: {
             addComment (commentId) {
@@ -139,10 +139,31 @@
             },
             isOwner (comment) {
                 return comment.user_id = User.getId()
+            },
+            initFileUpload () {
+                var self = this;
+
+                $("#uploadImage").dropzone({
+                    url: '/api/upload/image',
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': window.settings.token
+                    },
+                    uploadMultiple: false,
+                    previewsContainer: false,
+                    acceptedFiles: 'image/*',
+                    success (file, response) {
+                        if (response) {
+                            var text = self.comment_text || '';
+
+                            self.$set(
+                                'comment_text',
+                                text + ' ![' + response.name + '](' + response.file_url + ')'
+                            );
+                        }
+                    }
+                });
             }
-        },
-        initFileUpload () {
-            // TODO implement
         }
     }
 </script>
