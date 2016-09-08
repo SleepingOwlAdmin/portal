@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Activity;
+use App\Notifications\PostLiked;
 
 class HomeController extends Controller
 {

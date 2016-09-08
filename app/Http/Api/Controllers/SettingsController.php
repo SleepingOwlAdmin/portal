@@ -25,7 +25,6 @@ class SettingsController extends Controller
         $js = 'window.settings = '.json_encode([
             'user' => $user,
             'asset_url' => asset(''),
-            'token' => csrf_token(),
             'locale' => app()->getLocale(),
             'config' => config('portal'),
         ], JSON_PRETTY_PRINT);

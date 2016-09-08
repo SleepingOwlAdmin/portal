@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     {!! Meta::render() !!}
 </head>
 <body id="app-layout">

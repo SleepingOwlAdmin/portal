@@ -24,6 +24,19 @@ class NotificationsController extends Controller
     /**
      * @param Request $request
      *
+     * @return \Dingo\Api\Http\Response
+     */
+    public function get(Request $request, $id)
+    {
+        return $this->response()->item(
+            $request->user()->unreadNotifications()->find($id),
+            new NotificationTransformer()
+        );
+    }
+
+    /**
+     * @param Request $request
+     *
      * @return bool
      */
     public function markAsRead(Request $request)
@@ -32,11 +45,10 @@ class NotificationsController extends Controller
             'ids' => 'array'
         ]);
 
-        $request->user()
+        $request
+            ->user()
             ->unreadNotifications()
             ->whereIn('id', $request->input('ids', []))
-            ->update(['read_at', Carbon::now()]);
-
-        return true;
+            ->update(['read_at' => Carbon::now()]);
     }
 }

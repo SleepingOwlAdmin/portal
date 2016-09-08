@@ -9,24 +9,7 @@
         No
     </div>
     <div class="ui feed notification-item" v-show="hasNotifications" v-for="notification in notifications">
-        <div class="event">
-            <div class="label">
-                <i class="circular @{{ notification.icon }} icon"></i>
-            </div>
-            <div class="content">
-                <div class="summary">
-                    @{{{ notification.text }}}
-                </div>
-
-                <div class="meta">
-                    <div>
-                        <small class="date">
-                            @{{ notification.created_at | relative }}
-                        </small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="ui divider"></div>
+        @{{{ notification.html }}}
+        <div class="ui divided"></div>
     </div>
 </aside>

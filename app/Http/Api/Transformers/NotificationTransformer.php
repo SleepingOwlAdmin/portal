@@ -2,6 +2,7 @@
 
 namespace App\Http\Api\Transformers;
 
+use App\Notifications\HtmlNoificationWrapper;
 use Illuminate\Notifications\DatabaseNotification;
 use League\Fractal\TransformerAbstract;
 
@@ -16,8 +17,9 @@ class NotificationTransformer extends TransformerAbstract
     {
         return [
             'id' => $notification->id,
+            'html' => (new HtmlNoificationWrapper($notification))->toHtml(),
             'type' => $notification->type,
-            'is_read' => !is_null($notification->read_at),
+            'read' => !is_null($notification->read_at),
             'data' => $notification->data
         ];
     }

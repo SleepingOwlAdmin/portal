@@ -10,7 +10,6 @@ redis.psubscribe('*', function(err, count) {
 
 redis.on('pmessage', function(subscribed, channel, message) {
     message = JSON.parse(message);
-    console.log(channel, message);
     io.emit(channel + '[' + message.event + ']', message.data);
     io.emit(channel, message.data);
 })

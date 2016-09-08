@@ -4,6 +4,8 @@ namespace App\Listeners\Like;
 
 use App\Contracts\LikeableContract;
 use App\Events\Liked;
+use App\Mail\PostLiked;
+use App\Notifications\LikedNotification;
 
 class NotifyAboutLike
 {
@@ -25,13 +27,10 @@ class NotifyAboutLike
      */
     public function handle(Liked $event)
     {
-        $like = $event->like();
-        $subject = $like->likeable;
+        $author = $event->model()->getAuthor();
 
-        if ($subject instanceof LikeableContract) {
-            $author = $subject->getAuthor();
-
-            $author->notify(new \App\Notifications\Liked($subject));
-        }
+        $author->notify(new LikedNotification(
+            $event->model(), $event->like()
+        ));
     }
 }

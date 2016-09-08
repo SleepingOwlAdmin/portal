@@ -11,58 +11,64 @@ var app = new Vue({
         }
     },
     created () {
-        User.isLoggedIn() && this.loadDataForAuthenticatedUser()
+        if (User.isLoggedIn()) {
+            this.loadUserNotifications()
+
+            var self = this;
+
+            Pusher.on('private-App.User.' + User.getId(), notification => {
+                self.loadUserNotification(notification.id)
+            })
+        }
     },
     methods: {
         showNotifications () {
-            $('.sidebar-notifications').sidebar('setting', 'transition', 'overlay').sidebar('toggle')
+            $('.sidebar-notifications').sidebar('setting', 'transition', 'overlay')
+                .sidebar('toggle');
+
             this.markNotificationsAsRead()
         },
-        loadDataForAuthenticatedUser () {
-            this.getNotifications()
-        },
 
-        getNotifications () {
-            var self = this;
-
-            $('.notification-item').fadeIn()
-
+        loadUserNotifications () {
+            $(".notification-item").fadeIn();
             this.$http.get('notifications').then(response => {
                 this.notifications = response.data.data
             })
+        },
 
-            Pusher.on('user.' + User.getId(), 'App\\Events\\NotificationCreated', data => {
-                data.notification.read = fase
-                self.notifications.unshift(data.notification)
+        loadUserNotification (id) {
+            this.$http.get('notification/'+id).then(response => {
+                this.notifications.push(response.data.data)
             })
         },
-        markNotificationsAsRead () {
-            if (!this.hasUnreadNotifications) {
-                return
-            }
 
-            this.$http.put('notifications/read', {ids: _.pluck(this.notifications, 'id')}).then(response => {
-                _.each(this.notifications, notification => {
-                    notification.read = true
-                })
+        markNotificationsAsRead() {
+            this.$http.put('notifications/read', {ids: _.pluck(this.notifications, 'id')})
+
+            _.each(this.notifications, notification => {
+                notification.read = true
             })
         }
     },
     computed: {
         unreadNotifications () {
-            if (this.notifications) {
-                return _.filter(this.notifications, notification => {
-                    return !notification.read
-                }).length
+            if (_.size(this.notifications) > 0) {
+                return _.size(
+                    _.filter(this.notifications, notification => {
+                        return !notification.read
+                    })
+                )
             }
 
-            return 0
+            return 0;
         },
-        hasNotifications () {
-            return this.notifications.length
-        },
+
         hasUnreadNotifications () {
             return this.unreadNotifications > 0
         },
+
+        hasNotifications () {
+            return _.size(this.notifications) > 0;
+        }
     }
 })

@@ -1,3 +1,5 @@
+window.settings.token = document.querySelector("meta[name='csrf-token']").getAttribute('content')
+
 window._ = require('underscore')
 
 require('sweetalert2')

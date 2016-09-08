@@ -1,66 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                        {{ csrf_field() }}
+    <style type="text/css">
+        .column {
+            margin-top: 50px;
+            max-width: 450px;
+        }
+    </style>
+    <div class="ui middle center aligned grid">
+        <div class="column">
+            <h2 class="ui teal header">
+                @lang('core.title.login')
+            </h2>
+            <form class="ui large form" role="form" method="POST" action="{{ url('/login') }}">
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                {!! csrf_field() !!}
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}">
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                <div class="ui  segment">
+                    <div class="field {{ $errors->has('email') ? 'error' : '' }}">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="email" value="{{ old('email') }}" placeholder="@lang('core.user.field.email')">
                         </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password">
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                    </div>
+                    <div class="field {{ $errors->has('password') ? 'error' : '' }}">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password" placeholder="@lang('core.user.field.password')">
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember"> Remember Me
-                                    </label>
-                                </div>
-                            </div>
+                    <div class="field" style="text-align: left;">
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="remember" id="rememberMe" tabindex="0" checked>
+                            <label for="rememberMe">@lang('core.user.label.remember')</label>
                         </div>
+                    </div>
 
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-btn fa-sign-in"></i> Login
-                                </button>
-
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                            </div>
-                        </div>
-                    </form>
+                    <button class="ui fluid large teal submit button">@lang('core.user.button.login')</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
-</div>
 @endsection

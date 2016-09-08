@@ -36,7 +36,7 @@ class CommentCreated extends Event implements ShouldBroadcast
     /**
      * @return array
      */
-    public function broadcastEith()
+    public function broadcastWith()
     {
         return [
             'comment' => $this->comment

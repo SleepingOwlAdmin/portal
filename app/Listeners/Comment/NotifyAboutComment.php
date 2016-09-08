@@ -3,7 +3,6 @@
 namespace App\Listeners\Comment;
 
 use App\Events\CommentCreated;
-use App\Notifications\Commented;
 use App\Post;
 
 class NotifyAboutComment
@@ -26,13 +25,6 @@ class NotifyAboutComment
      */
     public function handle(CommentCreated $event)
     {
-        $comment = $event->comment();
 
-        /** @var Post $subject */
-        $subject = $event->comment()->commentable;
-
-        //if ($comment->getAuthor() != $subject->getAuthor()) {
-            $subject->getAuthor()->notify(new Commented($comment));
-       // }
     }
 }

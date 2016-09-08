@@ -53,7 +53,8 @@ class Post extends Model implements ActivityableContract, LikeableContract, Comm
         \App\Traits\Authored,
         \App\Traits\Likeable,
         \App\Traits\Commentable,
-        \Illuminate\Database\Eloquent\SoftDeletes;
+        \Illuminate\Database\Eloquent\SoftDeletes,
+        \Illuminate\Notifications\Notifiable;
 
     /**
      * The attributes that are mass assignable.

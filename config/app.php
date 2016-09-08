@@ -156,7 +156,7 @@ return [
          */
         SleepingOwl\Admin\Providers\SleepingOwlServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Barryvdh\Debugbar\ServiceProvider::class,
+        //Barryvdh\Debugbar\ServiceProvider::class,
         Dingo\Api\Provider\LaravelServiceProvider::class,
         App\Providers\HtmlServiceProvider::class,
 

@@ -22,9 +22,10 @@ class Controller extends BaseController
     {
         $this->meta = $meta;
 
-        $meta->clear();
+        $this->meta->clear();
 
-        $meta->addJs('settings', url('api/settings.js'), [], true)
+        $this->meta
+            ->addJs('settings', url('api/settings.js'), [], true)
             ->addJs('app', elixir('js/app.js'), ['settings'], true)
             ->addCss('app', elixir('css/app.css'));
     }

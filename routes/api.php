@@ -72,6 +72,11 @@ $api->group(['middleware' => 'auth'], function($api) {
         'uses' => 'NotificationsController@recent'
     ]);
 
+    $api->get('notification/{id}', [
+        'as' => 'notifications.get',
+        'uses' => 'NotificationsController@get'
+    ]);
+
     $api->put('notifications/read', [
         'as' => 'notifications.read',
         'uses' => 'NotificationsController@markAsRead'
