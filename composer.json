@@ -4,16 +4,6 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "type": "project",
-    "repositories": [
-      {
-        "type": "vcs",
-        "url": "https://github.com/Kaukov/api"
-      },
-      {
-        "type": "vcs",
-        "url": "https://github.com/Jaspaul/blueprint"
-      }
-    ],
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.3.*",
